@@ -12,8 +12,6 @@ import AssignmentRoundedIcon from '@mui/icons-material/AssignmentRounded';
 import SettingsRoundedIcon from '@mui/icons-material/SettingsRounded';
 import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
 import HelpRoundedIcon from '@mui/icons-material/HelpRounded';
-import ScienceRoundedIcon from '@mui/icons-material/ScienceRounded';
-import TroubleshootRoundedIcon from '@mui/icons-material/TroubleshootRounded';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
 
 const mainListItems = [
@@ -21,8 +19,6 @@ const mainListItems = [
   { text: 'Analytics', icon: <AnalyticsRoundedIcon /> },
   { text: 'Clients', icon: <PeopleRoundedIcon /> },
   { text: 'Tasks', icon: <AssignmentRoundedIcon /> },
-  { text: 'Test Page One', icon: <ScienceRoundedIcon />, to: '/test-one' },
-  { text: 'Test Page Two', icon: <TroubleshootRoundedIcon />, to: '/test-two' },
 ];
 
 const secondaryListItems = [
