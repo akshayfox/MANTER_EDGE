@@ -7,11 +7,13 @@ import { alpha } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
 import AppNavbar from './components/AppNavbar';
 import Header from './components/Header';
 import MainGrid from './components/MainGrid';
 import SideMenu from './components/SideMenu';
 import AppTheme from './theme/AppTheme';
+import { Link as RouterLink } from 'react-router-dom';
 import {
   chartsCustomizations,
   // dataGridCustomizations,
@@ -54,6 +56,14 @@ export default function Dashboard(props: { disableCustomTheme?: boolean }) {
             }}
           >
             <Header />
+            <Stack direction="row" spacing={2} sx={{ alignSelf: 'flex-start' }}>
+              <Button variant="contained" component={RouterLink} to="/test-one">
+                Go to Test Page One
+              </Button>
+              <Button variant="outlined" component={RouterLink} to="/test-two">
+                Go to Test Page Two
+              </Button>
+            </Stack>
             <MainGrid />
           </Stack>
         </Box>

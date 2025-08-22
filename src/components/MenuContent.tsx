@@ -12,12 +12,17 @@ import AssignmentRoundedIcon from '@mui/icons-material/AssignmentRounded';
 import SettingsRoundedIcon from '@mui/icons-material/SettingsRounded';
 import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
 import HelpRoundedIcon from '@mui/icons-material/HelpRounded';
+import ScienceRoundedIcon from '@mui/icons-material/ScienceRounded';
+import TroubleshootRoundedIcon from '@mui/icons-material/TroubleshootRounded';
+import { Link as RouterLink, useLocation } from 'react-router-dom';
 
 const mainListItems = [
-  { text: 'Home', icon: <HomeRoundedIcon /> },
+  { text: 'Home', icon: <HomeRoundedIcon />, to: '/' },
   { text: 'Analytics', icon: <AnalyticsRoundedIcon /> },
   { text: 'Clients', icon: <PeopleRoundedIcon /> },
   { text: 'Tasks', icon: <AssignmentRoundedIcon /> },
+  { text: 'Test Page One', icon: <ScienceRoundedIcon />, to: '/test-one' },
+  { text: 'Test Page Two', icon: <TroubleshootRoundedIcon />, to: '/test-two' },
 ];
 
 const secondaryListItems = [
@@ -27,12 +32,17 @@ const secondaryListItems = [
 ];
 
 export default function MenuContent() {
+  const location = useLocation();
   return (
     <Stack sx={{ flexGrow: 1, p: 1, justifyContent: 'space-between' }}>
       <List dense>
         {mainListItems.map((item, index) => (
           <ListItem key={index} disablePadding sx={{ display: 'block' }}>
-            <ListItemButton selected={index === 0}>
+            <ListItemButton
+              component={item.to ? RouterLink : 'button'}
+              to={item.to as any}
+              selected={item.to ? location.pathname === item.to : index === 0}
+            >
               <ListItemIcon>{item.icon}</ListItemIcon>
               <ListItemText primary={item.text} />
             </ListItemButton>
