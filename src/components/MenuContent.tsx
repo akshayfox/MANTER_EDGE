@@ -17,8 +17,8 @@ import { Link as RouterLink, useLocation } from 'react-router-dom';
 const mainListItems = [
   { text: 'Home', icon: <HomeRoundedIcon />, to: '/' },
   { text: 'Analytics', icon: <AnalyticsRoundedIcon /> },
-  { text: 'Clients', icon: <PeopleRoundedIcon /> },
-  { text: 'Tasks', icon: <AssignmentRoundedIcon /> },
+  { text: 'Clients', icon: <PeopleRoundedIcon />, to: '/clients' },
+  { text: 'Tasks', icon: <AssignmentRoundedIcon />, to: '/tasks' },
 ];
 
 const secondaryListItems = [
