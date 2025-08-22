@@ -1,13 +1,12 @@
-import * as React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import MainLayout from './layouts/MainLayout';
-import DashboardContent from './pages/DashboardContent';
+import DashboardPage from './features/dashboard/pages/DashboardPage';
 
 export default function App() {
   return (
     <Routes>
       <Route element={<MainLayout />}>
-        <Route path="/" element={<DashboardContent />} />
+        <Route path="/" element={<DashboardPage />} />
       </Route>
     </Routes>
   );
